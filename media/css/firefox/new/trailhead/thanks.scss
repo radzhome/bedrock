@@ -11,6 +11,76 @@ $image-path: '/media/protocol/img';
 @import '../../../../protocol/css/components/picto-card';
 @import '../../../../protocol/css/templates/card-layout';
 
+// Chrome post-download instructions experiment.
+
+.mzp-c-call-out h2 {
+    @include text-display-sm;
+    margin-top: $spacing-md;
+    text-align: center;
+}
+
+.c-picto-block {
+    @include border-box;
+    color: $color-dark-gray-20;
+    margin: 0 auto $spacing-2xl;
+    max-width: $content-md - ($layout-md * 2);
+    padding: 0 $layout-md;
+
+    .c-picto-block-title {
+        @include text-display-xxs;
+
+        &:before {
+            @include text-display-xxs;
+            background: $color-dark-gray-20;
+            border-radius: 50%;
+            color: $color-white;
+            content: counter(list-item);
+            display: inline-block;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            margin-right: $spacing-md;
+            text-align: center;
+            vertical-align: middle;
+            width: 2.5rem;
+        }
+    }
+
+    .c-picto-block-image {
+        align-items: center;
+        display: flex;
+        margin-bottom: $spacing-lg;
+    }
+}
+
+@media #{$mq-md} {
+    .l-columns-two {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: $content-lg - ($layout-xl * 2);
+        padding: 0 $layout-md;
+    }
+
+    .c-picto-block {
+        flex: 1 1 50%;
+        padding: 0 ($spacing-md + 4);
+    }
+}
+
+.sumo-section {
+    margin: 0 auto $spacing-2xl;
+    max-width: $content-md;
+    text-align: center;
+
+    h3 {
+        @include text-display-xs;
+        color: $color-ink-60;
+        margin: $spacing-md $spacing-2xl;
+    }
+}
+
+//* -------------------------------------------------------------------------- */
+
 // keep the button technically visible to grab correct download link for
 // backup download link
 .js #download-button-wrapper-desktop {
@@ -39,7 +109,7 @@ $image-path: '/media/protocol/img';
 }
 
 main {
-    @include at2x('/media/img/firefox/new/trailhead/thanks-bg.png', 492px, 433px);
+    @include at2x('/media/img/firefox/new/trailhead/thanks-bg.png', 472px, 433px);
     @include bidi(((background-position, top left -400px, top right -400px),));
     background-repeat: no-repeat;
     min-height: 50vh;
@@ -57,7 +127,7 @@ main {
     }
 
     html[dir="rtl"] & {
-        @include at2x('/media/img/firefox/new/trailhead/thanks-bg-rtl.png', 492px, 433px);
+        @include at2x('/media/img/firefox/new/trailhead/thanks-bg-rtl.png', 472px, 433px);
     }
 }
 
